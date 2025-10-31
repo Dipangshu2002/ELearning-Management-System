@@ -1,0 +1,133 @@
+.chat-container {
+    /* Center the chat box within the page/parent component */
+    max-width: 700px;
+    height: 60vh; /* Set a fixed height relative to the viewport height */
+    min-height: 400px;
+    margin: 40px auto;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    overflow: hidden;
+}
+
+/* --- Header --- */
+.chat-header {
+    background-color: #3498db; /* Primary Blue */
+    color: white;
+    padding: 15px 20px;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Messages Area --- */
+.messages {
+    flex-grow: 1;
+    padding: 15px;
+    overflow-y: auto; /* Enable scrolling for history */
+    background-color: #ecf0f1; /* Light background for message area */
+}
+
+/* Scrollbar styling (optional, for aesthetics) */
+.messages::-webkit-scrollbar {
+    width: 6px;
+}
+.messages::-webkit-scrollbar-thumb {
+    background-color: #bdc3c7;
+    border-radius: 10px;
+}
+.messages::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+
+/* --- Message Bubbles and Alignment --- */
+.messages > div {
+    margin-bottom: 12px;
+    clear: both; /* Ensures proper floating/wrapping */
+    max-width: 80%;
+    word-wrap: break-word;
+}
+
+.message-bubble {
+    padding: 10px 15px;
+    border-radius: 20px;
+    font-size: 0.95em;
+    line-height: 1.4;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.sender-label {
+    font-weight: bold;
+    margin-right: 5px;
+    display: block; /* Sender name on its own line */
+    font-size: 0.85em;
+    padding-bottom: 3px;
+}
+
+/* AI/Support Message Styling (Left-aligned) */
+.message-bubble {
+    background-color: #f0f3f6; /* Light gray */
+    color: #34495e;
+    border-top-left-radius: 2px;
+    float: left;
+}
+
+/* User Message Styling (Right-aligned) */
+.user-message .message-bubble {
+    background-color: #e8f5e9; /* Light green/success color */
+    color: #27ae60;
+    float: right;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 2px; /* Pointed edge */
+    text-align: right;
+}
+
+.user-message .sender-label {
+    color: #1abc9c;
+}
+.user-message {
+    margin-left: 20%; /* Keep user messages aligned right */
+}
+
+
+/* --- Input Area --- */
+.chat-input {
+    display: flex;
+    padding: 15px;
+    border-top: 1px solid #ddd;
+    background-color: #ffffff;
+}
+
+.chat-input input {
+    flex-grow: 1;
+    padding: 10px 15px;
+    border: 1px solid #bdc3c7;
+    border-radius: 25px;
+    font-size: 1em;
+    margin-right: 10px;
+    transition: border-color 0.3s;
+}
+
+.chat-input input:focus {
+    border-color: #3498db;
+    outline: none;
+}
+
+.chat-input button {
+    background-color: #2ecc71; /* Green Send Button */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.chat-input button:hover {
+    background-color: #27ae60;
+}
